@@ -44,3 +44,16 @@
 
 - Each node in the list requires space to store the data and a pointer to the next node.
 - The space required for a singly linked list is proportional to the number of nodes, hence the space complexity is O(n).
+
+# Doubly Linked List
+
+```
+               **Head**                                  **Tail**
+             ____________         ____________         ____________
+  NULL  <-- |    Prev    | <---- |    Prev    | <---- |    Prev    |
+            |    Next    | ----> |   Next     | ----> |    Next    | ----> NULL
+            |------------|       |------------|       |------------|
+            |    Data    |       |    Data    |       |    Data    |
+            |____________|       |____________|       |____________|
+
+```
