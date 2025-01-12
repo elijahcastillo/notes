@@ -21,7 +21,7 @@
 ```
     Sub Array
 
-    j       i/j+1
+    j       i 
     v       v
  |-------------|
 
@@ -33,11 +33,12 @@
 - Compare j+1 to j
 - if j+1 < j, swap so sub-array is sorted
 - We would keep moving down the subarray, but there are no more elements to compare against
+- Once j has gone through the entire sub array, increase size of sub-array to include the next element
 
 ```
     Sub Array
 
-    j       i/j+1
+    j       i (happens to be j+1)
     v       v
  |-------------|
 
@@ -46,13 +47,12 @@
 
 ##### Step 3
 
-- Increase size of sub-array to include the next element
 - Sort this new subarray
 
 ```
        Sub Array
 
-            j     i/j+1
+            j       i 
             v       v
  |---------------------|
 
@@ -64,34 +64,33 @@
 ```
        Sub Array
 
-            j      i/j+1
+            j       i 
             v       v
- |---------------------|
-
-[   1   ,   5   ,   3   ]
-```
-
-- j+1 < j, so we swap them
-- Then we decrease j to sort the remaining sub-array
-
-```
-       Sub Array
-
-    j      j+1      i
-    v       v       v
  |---------------------|
 
 [   1   ,   3   ,   5   ]
 ```
 
-- This goes on until the entire array is sorted
+- Then we decrease j to sort the remaining sub-array
+
+```
+       Sub Array
+
+    j               i
+    v               v
+ |---------------------|
+
+[   1   ,   3   ,   5   ]
+```
+
+
+- j+1 > j, so we dont do anything
+- The array is now sorted
 
 ## Complexity Analysis
 
 #### **Time Complexity** O(n²):
-
-- **Best Case (O(n))**: If the array is already sorted, no swaps are needed.
-- **Worst Case (O(n²))**: If the array is reverse-sorted, each element is compared with all previous elements.
+- **O(n²)**
 
 #### **Space Complexity**:
 
